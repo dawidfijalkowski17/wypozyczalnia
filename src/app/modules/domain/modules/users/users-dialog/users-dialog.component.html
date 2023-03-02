@@ -1,0 +1,22 @@
+<p-dialog [header]="header" [modal]="true" [(visible)]="display" [style]="{width: '300px'}" [baseZIndex]="10000">
+    <form [formGroup]="form" class="mt-4">
+        <div class="container">
+            <div class="box">
+                <div class="pb-4">
+                    <app-input type="text" placeholder="wpisz imie" labelName="Imię" formControlName="firstname"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz nazwisko" labelName="Nazwisko" formControlName="lastName"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz email" labelName="Email" formControlName="email"></app-input>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" label="Zapisz" class="p-button-text" (click)="save()"></p-button>
+        <p-button icon="pi pi-times" label="Anuluj" (click)="hideDialog()"></p-button>
+    </ng-template>
+</p-dialog>

@@ -1,0 +1,44 @@
+<p-dialog [header]="header" [modal]="true" [(visible)]="display" [style]="{width: '300px'}" [baseZIndex]="10000">
+    <form [formGroup]="form" class="mt-4">
+        <div class="container">
+            <div class="box">
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz imię" labelName="Imię" [formControlName]="formFields.FIRSTNAME"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz nazwisko" labelName="Nazwisko" [formControlName]="formFields.SURNAME"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz wiek" labelName="Wiek" [formControlName]="formFields.AGE"></app-input>
+                </div>
+            </div>
+            <div class="box">
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz numer prawa jazdy" labelName="Numer prawa jazdy" [formControlName]="formFields.DRIVER_LICENSE_NUMBER"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz numer domu" labelName="Numer domu" [formControlName]="formFields.HOUSE_NUMBER"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz numer mieszkania" labelName="Numer mieszkania" [formControlName]="formFields.APARTMENT_NUMBER"></app-input>
+                </div>
+            </div>
+            <div class="box">
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz miasto" labelName="Miasto" [formControlName]="formFields.CITY"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz kod pocztowt" labelName="Kod pocztowy" [formControlName]="formFields.POST_CODE"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz ulice" labelName="Ulica" [formControlName]="formFields.STREET"></app-input>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" label="Zapisz" class="p-button-text" (click)="save()"></p-button>
+        <p-button icon="pi pi-times" label="Anuluj" (click)="hideDialog()"></p-button>
+    </ng-template>
+</p-dialog>

@@ -1,0 +1,13 @@
+<div class="content">
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <div>
+        <app-input type="text" placeholder="Login" id="inputLogin" labelName="Login" [formControlName]="loginFormFields.LOGIN"></app-input>
+    </div>
+    <div class="mt-5">
+        <app-input type="password" placeholder="Password" id="inputPassword" labelName="Hasło" [formControlName]="loginFormFields.PASSWORD"></app-input>
+    </div>
+    <div class="button-cta mt-5">
+        <button pButton type="submit" [disabled]="!loginForm.valid" label="Zaloguj" class="p-button-rounded"></button>
+    </div>
+</form>
+</div>

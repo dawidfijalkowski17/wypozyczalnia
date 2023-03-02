@@ -1,0 +1,9 @@
+<div class="p-5">
+    <div class="header mb-2">
+        <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-primary" (click)="userDialog.showDialog()"></button>
+    </div>
+    <div class="table-content">
+        <app-users-table [values]="values" (refresh)="loadData()"></app-users-table>
+    </div>
+</div>
+<app-users-dialog #userDialog header="Dodaj użytkownika" (handleOperation)="add($event)"></app-users-dialog>

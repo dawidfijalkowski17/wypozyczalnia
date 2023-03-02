@@ -1,0 +1,11 @@
+<div class="p-5">
+    <div class="header mb-2">
+        <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-primary" (click)="clientDialog.showDialog()"></button>
+    </div>
+    <div class="table-content">
+        <app-clients-table [values]="clientValues" (refresh)="loadData()"></app-clients-table>
+    </div>
+</div>
+<app-client-dialog #clientDialog header="Dodaj klienta" (handleOperation)="add($event)"></app-client-dialog>
+
+

@@ -1,0 +1,21 @@
+<p-table [value]="values" [responsive]="true">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Adres email</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-value>
+        <tr>
+            <td>{{ value.firstname }}</td>
+            <td>{{ value.surname }}</td>
+            <td>{{ value.email }}</td>
+            <td><button pButton pRipple type="button" icon="pi pi-user-edit" class="p-button-rounded p-button-warning" (click)="userDialog.showDialog(value)"></button></td>
+            <td><button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger" ></button></td>
+        </tr>
+    </ng-template>
+</p-table>
+<app-users-dialog #userDialog header="Edytuj użytkownika" (handleOperation)="handleOperation($event, OperationType.EDIT)"></app-users-dialog>

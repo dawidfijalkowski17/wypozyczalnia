@@ -1,0 +1,4 @@
+<p-menubar [model]="menuItems" class="menu">
+    <button pButton label="Wyloguj" icon="pi pi-power-off" *ngIf="isLogged" routerLink="/" (click)="logout()"></button>
+    <button pButton label="Zaloguj" icon="pi pi-power-on" *ngIf="!isLogged" routerLink="/login"></button>
+</p-menubar>

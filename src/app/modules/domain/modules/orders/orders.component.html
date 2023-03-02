@@ -1,0 +1,9 @@
+<div class="p-5">
+    <div class="header mb-2">
+        <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-primary" (click)="ordersDialog.showDialog()"></button>
+    </div>
+    <div class="table-content">
+        <app-orders-table [values]="orderValues"></app-orders-table>
+    </div>
+</div>
+<app-orders-dialog #ordersDialog (handleOperation)="add($event)"></app-orders-dialog>

@@ -1,0 +1,8 @@
+{
+    "enums": {
+        "GearboxType": {
+            "AUTOMATIC": "Automatyczna",
+            "MANUAL": "Manualna"
+        }
+    }
+}

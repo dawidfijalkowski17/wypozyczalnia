@@ -1,0 +1,53 @@
+<p-dialog header="Edycja zamówienia" [modal]="true" [(visible)]="display" [style]="{width: '600px'}" [baseZIndex]="10000">
+    <form [formGroup]="form" class="mt-4">
+        <div class="container">
+            <div class="box">
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz kolor samochodu" labelName="Kolor samochodu" formControlName="car_color"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input-number placeholder="Wpisz pojemność silinka" labelName="Pojemność silnika" formControlName="car_engine_capacity"></app-input-number>
+                </div>
+                <div class="pb-4">
+                    <app-drop-down [options]="gearboxTypeOptions" labelName="Typ skrzyni" placeholder="Wybierz typ skrzyni"  formControlName="car_gearbox_type"></app-drop-down>
+                </div>
+            </div>
+            <div class="box">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-calendar formControlName="from_date" appendTo="body"></p-calendar>
+                        <label for="float-input">Data od</label>
+                    </span>
+                </div>
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-calendar formControlName="to_date" appendTo="body"></p-calendar>
+                        <label for="float-input">Data do</label>
+                    </span>
+                </div>
+                <div class="pb-4">
+                    <app-drop-down [options]="options" labelName="Wybierz ubezpieczenie" placeholder="Dodatkowe ubezpieczenie"  formControlName="is_additional_insurance"></app-drop-down>
+                </div>
+            </div>
+            <div class="box">
+                <div class="pb-4">
+                    <app-drop-down [options]="options" labelName="Opłacone" placeholder="Czy opłacono"  formControlName="is_paid"></app-drop-down>
+                </div>
+                <div class="pb-4">
+                    <app-drop-down [options]="options" labelName="Czy zwrócone" placeholder="Czy zwrócono"  formControlName="is_returned"></app-drop-down>
+                </div>
+                <div class="pb-4">
+                    <app-drop-down [options]="options" labelName="Wypożyczono" placeholder="Czy wynajęte"  formControlName="is_rent"></app-drop-down>
+                </div>
+                <div class="pb-4">
+                    <app-input-number placeholder="Wpisz cene" labelName="Cena całkowita" formControlName="total_price"></app-input-number>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" label="Zapisz" class="p-button-text" (click)="save()"></p-button>
+        <p-button icon="pi pi-times" label="Anuluj" (click)="hideDialog()"></p-button>
+    </ng-template>
+</p-dialog>

@@ -1,0 +1,38 @@
+<p-dialog [header]="header" [modal]="true" [(visible)]="display" [style]="{width: '300px'}" [baseZIndex]="10000">
+    <form [formGroup]="form" class="mt-4">
+        <div class="container">
+            <div class="box">
+                <div class="pb-4">
+                    <app-input type="text" placeholder="wpisz model" labelName="Model" formControlName="model"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz marke" labelName="Marka" formControlName="mark"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-input-number placeholder="Wpisz pojemnosc silnika" labelName="Pojemnosc silnika" formControlName="engine_capacity"></app-input-number>
+                </div>
+            </div>
+            <div class="box">
+                <div class="pb-4">
+                    <app-input type="text" placeholder="Wpisz kolor" labelName="Kolor" formControlName="color"></app-input>
+                </div>
+                <div class="pb-4">
+                    <app-drop-down [options]="gearboxTypeOptions" labelName="Typ skrzyni" placeholder="Wybierz typ skrzyni"  formControlName="gearbox_type"></app-drop-down>
+                </div>
+                <div class="pb-4">
+                    <app-drop-down [options]="carType" labelName="Typ samochodu" placeholder="Wybierz typ samochodu"  formControlName="type"></app-drop-down>
+                </div>
+            </div>
+            <div class="box">
+                <div class="pb-4">
+                    <app-input-number placeholder="Wpisz cene za dzien" labelName="Cena za dzien" formControlName="price_per_day"></app-input-number>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" label="Zapisz" class="p-button-text" (click)="save()"></p-button>
+        <p-button icon="pi pi-times" label="Anuluj" (click)="hideDialog()"></p-button>
+    </ng-template>
+</p-dialog>

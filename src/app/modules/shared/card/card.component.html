@@ -1,0 +1,16 @@
+<p-card>
+    <ng-template pTemplate="header">
+        <h3 class="pt-2 pl-3">{{ car.mark }}</h3>
+    </ng-template>
+    <div>
+        <p><b>Model:</b> {{ car.model }}</p>
+        <p><b>Pojemność silnika:</b> {{ car.engine_capacity }}</p>
+        <p><b>Kolor:</b> {{ car.color }}</p>
+        <p><b>Typ skrzyni:</b> {{ car.gearbox_type }}</p>
+        <p><b>Typ auta</b> {{ car.car_type }}</p>
+        <p><b>Cena za dzień:</b> {{ car.price_per_day}}</p>
+    </div>
+    <ng-template pTemplate="footer">
+        Stopka
+    </ng-template>
+</p-card>

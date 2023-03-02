@@ -1,0 +1,22 @@
+export interface IOrder {
+    id: number,
+    from_date: Date,
+    to_date: Date,
+    total_price: number,
+    is_paid: boolean,
+    is_rent: boolean,
+    is_returned: boolean,
+    is_additional_insurance: boolean,
+    comments: string,
+    client_id: number,
+    car_id: number,
+    client_firstname: string,
+    client_driver_license_number: string,
+    client_surname: string,
+    car_mark: string,
+    car_model: string,
+    car_engine_capacity: number,
+    car_color: string,
+    car_gearbox_type: string,
+    car_type: string;
+}
